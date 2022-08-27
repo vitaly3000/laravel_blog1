@@ -1,0 +1,8 @@
+@mixin font-face($name, $src, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: string.quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}

@@ -1,4 +1,0 @@
-{
-    "presets": ["@babel/preset-env"], // стандартные настройки
-    "plugins": ["@babel/plugin-proposal-class-properties"]
-  }

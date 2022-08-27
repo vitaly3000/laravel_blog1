@@ -1,0 +1,45 @@
+// Пользовательские переменные
+
+// Цвета, по возможности желательно придерживаться этого формата
+$color-white: #fff;
+$color-black: #000;
+$color-red: #c04c36;
+$color-blue: #245b8f;
+$color-turquoise: #04a7b5;
+$color-bg-site: #f9f9fa;
+
+// минималка и максималка для контента сайта (может не совпадать с брекпоинтами)
+$content-width-min: 320px; // минимальная ширина сайта
+$content-width-max: 1920px; // максимальная ширина сайта
+
+$site-breakpoints: (
+    min: 320px,
+    mobile: 374px,
+    mobile2: 450px,
+    mobile3: 767px,
+    middle: 1040px,
+    middle2: 1240px,
+    middle3: 1440px,
+    full: 1920px,
+);
+
+$global-font-size: 20px;
+$global-lineheight: 1.5;
+
+$body-background: $color-white;
+$body-font-color: $color-black;
+$body-font-family: "Roboto", "Helvetica", sans-serif;
+$body-font-size: 1rem;
+
+// Брекпоинты по ширине
+$breakpoints-width: (
+    "zero": 0,
+    "600": 600px,
+    "860": 860px,
+    "1600": 1600px,
+);
+
+// Брекпоинты по высоте
+$breakpoints-height: (
+    "zero": 0,
+);
