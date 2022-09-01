@@ -1,0 +1,10 @@
+$block-name: "category-detail";
+
+.#{$block-name} {
+    font-size: 18px;
+}
+
+.#{$block-name}__top {
+    display: flex;
+    align-items: center;
+}

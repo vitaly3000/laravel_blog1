@@ -1,0 +1,15 @@
+$block-name: "categories-selector";
+
+.#{$block-name} {
+    &__table-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    &__table-icon {
+        margin: 0 5px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+    }
+}
