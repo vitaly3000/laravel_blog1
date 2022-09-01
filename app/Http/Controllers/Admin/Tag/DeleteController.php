@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin\Tag;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 
-class EditController extends Controller
+class DeleteController extends Controller
 {
     public function __invoke(Tag $tag) {
 
-        return view('admin.tag.edit',[
-            "tag" => $tag
-        ]);
+        $tag->delete();
+
+        return redirect()->route('admin.tag.index');
     }
 }

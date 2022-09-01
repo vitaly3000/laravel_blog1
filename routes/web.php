@@ -33,7 +33,7 @@ Route::group(["prefix" => "admin", "namespace" => "App\Http\Controllers\Admin"],
         Route::delete('/{category}/delete', DeleteController::class)->name('admin.category.delete');
     });
 
-    Route::group(["prefix" => "tags", "namespace" => "Tags"], function() {
+    Route::group(["prefix" => "tags", "namespace" => "Tag"], function() {
         Route::get('/', IndexController::class)->name('admin.tag.index');
         Route::get('/create', CreateController::class)->name('admin.tag.create');
         Route::post('/create', StoreController::class)->name('admin.tag.store');

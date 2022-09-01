@@ -8,7 +8,7 @@ use App\Models\Category;
 class EditController extends Controller
 {
     public function __invoke(Category $category) {
-        return view('admin.categories.edit',[
+        return view('admin.category.edit',[
             "category" => $category
         ]);
     }
