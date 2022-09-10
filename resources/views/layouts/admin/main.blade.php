@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="{{ asset('admin_assets/plugins/daterangepicker/daterangepicker.css') }}">
+
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{ asset('admin_assets/plugins/summernote/summernote-bs4.min.css') }}">
+
   <link rel="stylesheet" href="{{ asset('build/css/index.css') }}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -81,13 +85,9 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('admin_assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('admin_assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
 <!-- daterangepicker -->
 <script src="{{ asset('admin_assets/plugins/moment/moment.min.js') }}"></script>
 <script src="{{ asset('admin_assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
@@ -95,11 +95,24 @@
 <script src="{{ asset('admin_assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- overlayScrollbars -->
 <script src="{{ asset('admin_assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+
+<!-- bs-custom-file-input -->
+<script src="{{ asset('admin_assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin_assets/dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin_assets/dist/js/demo.js') }}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ asset('admin_assets/dist/js/pages/dashboard.js') }}"></script>
+{{-- <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('admin_assets/dist/js/pages/dashboard.js') }}"></script> --}}
+<!-- Summernote -->
+<script src="{{ asset('admin_assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#post-content').summernote();
+
+        bsCustomFileInput.init();
+    });
+</script>
 </body>
 </html>
