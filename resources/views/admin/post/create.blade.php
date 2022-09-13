@@ -31,15 +31,34 @@
                 </div>
             @enderror
         </div>
-        <div class="form-group">
+
+        <div class="form-group w-50">
+            <label for="category-select">Выберите категорию</label>
+            <select class="form-control select2" id="category-select" name="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category['title'] }}</option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <div class="mb-2 text-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+          </div>
+          <div class="form-group w-50">
+            <label>Выберите теги</label>
+            <select class="select2" multiple="multiple" name="tag_ids[]" data-placeholder="Выберите теги" style="width: 100%;">
+              @foreach ($tags as $tag)
+                 <option value="{{ $tag['id'] }}" {{ is_array( old('tag_ids') ) && in_array( $tag['id'], old('tag_ids') ) ? 'selected' : '' }}>{{ $tag ['title'] }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group w-50">
             <label for="preview-image">Превью поста</label>
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="preview-image" name="preview_image">
                     <label class="custom-file-label" for="preview-image">Выберите файл</label>
-                </div>
-                <div class="input-group-append">
-                    <span class="input-group-text">Загрузить</span>
                 </div>
             </div>
             @error('preview_image')
@@ -48,15 +67,12 @@
             </div>
         @enderror
         </div>
-        <div class="form-group">
+        <div class="form-group w-50">
             <label for="banner-image">баннер поста</label>
             <div class="input-group">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="banner-image" name="banner_image">
                     <label class="custom-file-label" for="banner-image">Выберите файл</label>
-                </div>
-                <div class="input-group-append">
-                    <span class="input-group-text">Загрузить</span>
                 </div>
             </div>
             @error('banner_image')
@@ -65,6 +81,7 @@
                 </div>
             @enderror
         </div>
+
         <button type="submit" class="btn btn-block btn-dark btn-lg">Создать</button>
     </form>
 @endsection

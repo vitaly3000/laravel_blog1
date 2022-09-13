@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
     use HasFactory;
 
-    use HasFactory;
+    use SoftDeletes;
 
     // название таблицы
     protected $table = "posts";
@@ -18,4 +20,9 @@ class Post extends Model
 
     // Указать какие свойства могут добавить
     //protected $fillable = ['title'];
+
+
+    public function tags() {
+        return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+    }
 }
